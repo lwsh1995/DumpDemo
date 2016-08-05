@@ -6,16 +6,8 @@
 
 ## DataBase
 
-|| *Field* || *Type* || *Extra* ||
-
-|| id || int(11) || PK, auto_increment ||
-
-|| username || varchar(255) || - ||
-
-|| password || varchar(255) || - ||
-
 | Field         | Type          | Extra |
-| ------------- |:-------------:| -----:|
-| id            | int(11)       | PK, auto_increment |
+| ------------- |:-------------:| :-----:|
+| id            | int(11)       | primary_key, auto_increment |
 | username      | varchar(255)  |  -  |
 | password      | varchar(255   |  -  |
