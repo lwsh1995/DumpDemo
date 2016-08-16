@@ -29,7 +29,6 @@ public class UserDao {
 
     @Pointcut
     public User login(User user){
-        System.out.println("login()");
         List<User> list = Session.getSession().selectBysql("select * from user where username = ? and password = ?",User.class,user.getUsername(),user.getPassword());
         if(list.size()!=0){
             return list.get(0);
