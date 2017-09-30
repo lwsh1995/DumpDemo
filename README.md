@@ -1,4 +1,4 @@
-# A Dump Demo
+# Dump Demo
 
 ## About
 

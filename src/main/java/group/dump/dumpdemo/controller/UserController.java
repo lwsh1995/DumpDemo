@@ -10,7 +10,7 @@ import group.dump.filter.annotation.RequestMapping;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@Controller()
+@Controller
 @Autowired
 public class UserController {
     private UserService userService;
