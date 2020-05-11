@@ -1,42 +1,23 @@
 package group.dump.dumpdemo.controller;
 
-import group.dump.bean.annotation.Autowired;
+import com.alibaba.fastjson.JSON;
 import group.dump.dumpdemo.model.User;
-import group.dump.dumpdemo.service.UserService;
-import group.dump.filter.annotation.Controller;
-import group.dump.filter.annotation.Param;
-import group.dump.filter.annotation.RequestMapping;
-
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import group.dump.web.annotation.*;
 
 @Controller
-@Autowired
+@RequestMapping("/test")
 public class UserController {
-    private UserService userService;
 
-    public void setUserService(UserService userService) {
-        this.userService = userService;
+    @ResponseBody
+    @RequestMapping("/testAjax")
+    public String testAjax(@RequestModel User user) {
+        return JSON.toJSONString(user);
     }
 
-    @RequestMapping("/register")
-    public void register(HttpServletResponse response,
-                         User user, @Param("again") String again) throws Exception {
-        String result = userService.register(user, again);
-        response.setContentType("text/html;charset=UTF-8");
-        response.getWriter().print(result);
-    }
-
-    @RequestMapping("/login")
-    public void login(HttpSession session,
-                      HttpServletResponse response,
-                      User user) throws Exception{
-        User us = userService.login(user);
-        response.setContentType("text/html;charset=UTF-8");
-        if(us == null){
-            response.getWriter().print("false");
-        }else{
-            response.getWriter().print("true");
-        }
+    @RequestMapping("/testReturnUrl")
+    public String testReturnUrl(@RequestParam("username") String username, @RequestParam(value = "tel", required = false, defaultValue = "110") String tel) {
+        System.out.println(username);
+        System.out.println(tel);
+        return "/success.html";
     }
 }

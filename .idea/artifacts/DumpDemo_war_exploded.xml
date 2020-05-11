@@ -1,19 +1,25 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="DumpDemo:war exploded">
     <output-path>$PROJECT_DIR$/target/DumpDemo</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>DumpDemo</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="DumpDemo" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="Maven: group.dump:Dump:1.2" />
-          <element id="library" level="project" name="Maven: asm:asm:3.3.1" />
-          <element id="library" level="project" name="Maven: cglib:cglib:2.2" />
+          <element id="library" level="project" name="Maven: group.dump:Dump:1.0-SNAPSHOT" />
           <element id="library" level="project" name="Maven: org.reflections:reflections:0.9.11" />
           <element id="library" level="project" name="Maven: com.google.guava:guava:20.0" />
           <element id="library" level="project" name="Maven: org.javassist:javassist:3.21.0-GA" />
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:6.0.3" />
+          <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.2.68" />
         </element>
       </element>
       <element id="directory" name="META-INF">
